@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
+  document.querySelector('.announcement-close')?.addEventListener('click', (event) => {
+    event.currentTarget.parentElement.hidden = true;
+  });
+
   const target = document.querySelector('#product-detail');
   if (!target) return;
 
   try {
-    const response = await fetch('../data/products.json');
+    const response = await fetch('products.json');
     if (!response.ok) throw new Error('Unable to load products.');
     const products = await response.json();
     const requestedId = Number(new URLSearchParams(location.search).get('id'));
@@ -17,8 +21,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function renderProduct(target, product, products) {
-  const images = (product.images || []).map(resolveProductImage).filter(Boolean);
-  const primaryImage = images[0] || '../images/T-shirt_With_Tape_Details.png';
+  const images = (product.images || []).filter(Boolean);
+  const primaryImage = images[0] || 'Images/T-shirt_With_Tape_Details.png';
   const colors = product.colors?.length ? product.colors : ['black'];
   const sizes = product.sizes?.length ? product.sizes : ['One Size'];
   const related = [...products.filter((item) => item.id !== product.id && item.category === product.category), ...products.filter((item) => item.id !== product.id && item.category !== product.category)].slice(0, 4);
@@ -34,13 +38,13 @@ function renderProduct(target, product, products) {
     </section>
     <section class="product-tabs"><button type="button" class="product-tab active" data-panel="details">Product Details</button><button type="button" class="product-tab" data-panel="reviews">Rating &amp; Reviews</button><button type="button" class="product-tab" data-panel="faqs">FAQs</button></section>
     <section id="product-tab-content" class="tab-content">${detailsMarkup(product)}</section>
-    <section class="related-section"><h2 class="related-title">You might also like</h2><div class="related-grid">${related.map((item) => `<article class="related-card"><a href="product.html?id=${item.id}"><img src="${resolveProductImage(item.images?.[0])}" alt="${escapeHtml(item.name)}" /><h4>${escapeHtml(item.name)}</h4><div class="related-pricing"><span class="related-price">$${item.price}</span>${item.originalPrice > item.price ? `<span class="related-old-price">$${item.originalPrice}</span>` : ''}</div></a></article>`).join('')}</div></section>`;
+    <section class="related-section"><h2 class="related-title">You might also like</h2><div class="related-grid">${related.map((item) => `<article class="related-card"><a href="product.html?id=${item.id}"><img src="${item.images?.[0] || ''}" alt="${escapeHtml(item.name)}" /><h4>${escapeHtml(item.name)}</h4><div class="related-pricing"><span class="related-price">$${item.price}</span>${item.originalPrice > item.price ? `<span class="related-old-price">$${item.originalPrice}</span>` : ''}</div></a></article>`).join('')}</div></section>`;
 
   target.querySelectorAll('.product-thumb-list button[data-image]').forEach((button) => button.addEventListener('click', () => { target.querySelector('#main-product-image').src = button.dataset.image; target.querySelectorAll('.product-thumb-list button').forEach((item) => item.classList.remove('active')); button.classList.add('active'); }));
   target.querySelectorAll('.swatch').forEach((button) => button.addEventListener('click', () => { selectedColor = button.dataset.color; target.querySelectorAll('.swatch').forEach((item) => item.classList.remove('active')); button.classList.add('active'); }));
   target.querySelectorAll('.size-option').forEach((button) => button.addEventListener('click', () => { selectedSize = button.dataset.size; target.querySelectorAll('.size-option').forEach((item) => item.classList.remove('active')); button.classList.add('active'); }));
   target.querySelectorAll('[data-quantity]').forEach((button) => button.addEventListener('click', () => { quantity = Math.max(1, quantity + Number(button.dataset.quantity)); target.querySelector('#product-quantity').textContent = quantity; }));
-  target.querySelector('#add-to-cart').addEventListener('click', () => { const cart = ShopStorage.getCart(); const entry = cart.find((item) => item.id === product.id && item.size === selectedSize && item.color === selectedColor); if (entry) entry.quantity += quantity; else cart.push({ ...product, image: product.images?.[0] || '', size: selectedSize, color: selectedColor, quantity }); ShopStorage.setCart(cart); updateCartCount(); target.querySelector('#cart-feedback').textContent = `${quantity} item${quantity > 1 ? 's' : ''} added to your cart.`; });
+  target.querySelector('#add-to-cart').addEventListener('click', () => { const cart = getCartItems(); const entry = cart.find((item) => item.id === product.id && item.size === selectedSize && item.color === selectedColor); if (entry) entry.quantity += quantity; else cart.push({ ...product, image: product.images?.[0] || '', size: selectedSize, color: selectedColor, quantity }); setCartItems(cart); target.querySelector('#cart-feedback').textContent = `${quantity} item${quantity > 1 ? 's' : ''} added to your cart.`; });
   target.querySelectorAll('.product-tab').forEach((button) => button.addEventListener('click', () => { target.querySelectorAll('.product-tab').forEach((item) => item.classList.remove('active')); button.classList.add('active'); const content = target.querySelector('#product-tab-content'); content.innerHTML = button.dataset.panel === 'details' ? detailsMarkup(product) : button.dataset.panel === 'reviews' ? reviewsMarkup(product) : faqsMarkup(); if (button.dataset.panel === 'reviews') bindReviewForm(content, product); }));
 }
 

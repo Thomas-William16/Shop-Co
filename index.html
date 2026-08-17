@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOP.CO — Find Clothes That Match Your Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement">
+  Sign up and get 20% off your first order. <strong>Sign Up Now</strong>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">SHOP.CO</a>
+    <nav class="main-nav">
+      <a href="shop.html">Shop ▾</a>
+      <a href="shop.html">On Sale</a>
+      <a href="shop.html">New Arrivals</a>
+      <a href="shop.html">Brands</a>
+    </nav>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" placeholder="Search for products...">
+    </div>
+    <div class="header-icons">
+      <a class="icon-btn" href="cart.html" title="Cart">
+        🛒<span class="cart-count">0</span>
+      </a>
+      <a class="icon-btn" href="#" title="Account">👤</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+      <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+      <a href="shop.html" class="btn btn-primary">Shop Now</a>
+      <div class="hero-stats">
+        <div><strong>200+</strong><span>International Brands</span></div>
+        <div><strong>2,000+</strong><span>High-Quality Products</span></div>
+        <div><strong>30,000+</strong><span>Happy Customers</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <span class="spark s1">✦</span>
+      <span class="spark s2">✦</span>
+      <img src="Images/Double models.jpg" alt="Models wearing featured outfits">
+    </div>
+  </div>
+</section>
+
+<section class="brand-strip">
+  <div class="container">
+    <span>VERSACE</span>
+    <span>ZARA</span>
+    <span>GUCCI</span>
+    <span class="accent">PRADA</span>
+    <span>Calvin Klein</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">NEW ARRIVALS</h2>
+    <div class="product-grid" id="new-arrivals-grid"></div>
+    <div class="section-foot"><a href="shop.html" class="btn btn-outline">View All</a></div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid var(--gray-100); border-bottom:1px solid var(--gray-100);">
+  <div class="container">
+    <h2 class="section-title">TOP SELLING</h2>
+    <div class="product-grid" id="top-selling-grid"></div>
+    <div class="section-foot"><a href="shop.html" class="btn btn-outline">View All</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">BROWSE BY DRESS STYLE</h2>
+    <div class="style-grid">
+      <a class="style-card casual" href="shop.html?style=Casual">
+        <img src="Images/Casual Model.png" alt="Casual style">
+        <span>Casual</span>
+      </a>
+      <a class="style-card formal" href="shop.html?style=Formal">
+        <img src="Images/Formal model.png" alt="Formal style">
+        <span>Formal</span>
+      </a>
+      <a class="style-card party" href="shop.html?style=Party">
+        <img src="Images/Party Style.webp" alt="Party style">
+        <span>Party</span>
+      </a>
+      <a class="style-card gym" href="shop.html?style=Gym">
+        <img src="Images/Gym Model.png" alt="Gym style">
+        <span>Gym</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="testimonial-head">
+      <h2>OUR HAPPY CUSTOMERS</h2>
+      <div class="arrow-group">
+        <button id="testi-prev">←</button>
+        <button id="testi-next">→</button>
+      </div>
+    </div>
+    <div class="testimonial-grid" id="testimonial-grid">
+      <div class="testimonial-card">
+        <span class="stars">★★★★★</span>
+        <div class="name">Sarah M. <span class="verified">✔</span></div>
+        <p>"I'm blown away by the quality and style of the clothes I received. Every piece feels well-made and fits perfectly."</p>
+      </div>
+      <div class="testimonial-card">
+        <span class="stars">★★★★★</span>
+        <div class="name">Alex K. <span class="verified">✔</span></div>
+        <p>"Finding clothes that align with my personal style used to be a challenge until I found this store — the range is fantastic."</p>
+      </div>
+      <div class="testimonial-card">
+        <span class="stars">★★★★★</span>
+        <div class="name">James L. <span class="verified">✔</span></div>
+        <p>"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have found this store — great selection."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="newsletter">
+  <h3>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h3>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email address" required>
+    <button type="submit">Subscribe to Newsletter</button>
+  </form>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">SHOP.CO</a>
+        <p>We have clothes that suit your style and which you're proud to wear. From women to men.</p>
+        <div class="footer-socials">
+          <a href="#">𝕏</a><a href="#">f</a><a href="#">ig</a><a href="#">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li>About</li><li>Features</li><li>Works</li><li>Career</li></ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul><li>Customer Support</li><li>Delivery Details</li><li>Terms &amp; Conditions</li><li>Privacy Policy</li></ul>
+      </div>
+      <div>
+        <h4>FAQ</h4>
+        <ul><li>Account</li><li>Manage Deliveries</li><li>Orders</li><li>Payments</li></ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul><li>Free eBooks</li><li>Development Tutorial</li><li>How to - Blog</li><li>Youtube Playlist</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Shop.co © 2026, All Rights Reserved</span>
+      <span>VISA · Mastercard · PayPal · Apple Pay</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Home-page specific rendering: pull New Arrivals / Top Selling from the shared catalog
+  (async function initHomePage() {
+    try {
+      const products = await loadProducts();
+
+      const newArrivals = products.filter(p => p.tags.includes("new-arrival")).slice(0, 4);
+      const topSelling = products.filter(p => p.tags.includes("top-selling")).slice(0, 4);
+
+      renderProducts(document.getElementById("new-arrivals-grid"), newArrivals);
+      renderProducts(document.getElementById("top-selling-grid"), topSelling);
+
+      // Clicking a product card on the homepage sends the shopper to the shop page, focused on that item
+      document.body.addEventListener("click", (e) => {
+        const card = e.target.closest(".product-card");
+        if (card) {
+          e.preventDefault();
+          window.location.href = `shop.html?product=${card.dataset.id}`;
+        }
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  })();
+</script>
+</body>
+</html>

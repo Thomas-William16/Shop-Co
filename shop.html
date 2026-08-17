@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — SHOP.CO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement">
+  Sign up and get 20% off your first order. <strong>Sign Up Now</strong>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">SHOP.CO</a>
+    <nav class="main-nav">
+      <a href="shop.html">Shop ▾</a>
+      <a href="shop.html">On Sale</a>
+      <a href="shop.html">New Arrivals</a>
+      <a href="shop.html">Brands</a>
+    </nav>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" id="search-input" placeholder="Search for products...">
+    </div>
+    <div class="header-icons">
+      <a class="icon-btn" href="cart.html" title="Cart">
+        🛒<span class="cart-count">0</span>
+      </a>
+      <a class="icon-btn" href="#" title="Account">👤</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="index.html">Home</a> / <strong>Shop</strong></p>
+</div>
+
+<div class="container shop-layout">
+
+  <!-- ===================== FILTERS ===================== -->
+  <aside class="filters" id="filters-panel">
+    <div class="filters-head">
+      <h3>Filters</h3>
+      <button id="clear-filters">Clear all</button>
+    </div>
+
+    <details class="filter-group" open>
+      <summary>Category</summary>
+      <div class="filter-options" id="category-options"></div>
+    </details>
+
+    <details class="filter-group" open>
+      <summary>Price</summary>
+      <div class="price-slider-wrap">
+        <div class="price-values">
+          <span id="price-min-label">$0</span>
+          <span id="price-max-label">$300</span>
+        </div>
+        <div class="range-track">
+          <div class="fill" id="price-fill"></div>
+          <input type="range" id="price-min" min="0" max="300" step="5" value="0">
+          <input type="range" id="price-max" min="0" max="300" step="5" value="300">
+        </div>
+      </div>
+    </details>
+
+    <details class="filter-group" open>
+      <summary>Colors</summary>
+      <div class="color-options" id="color-options"></div>
+    </details>
+
+    <details class="filter-group" open>
+      <summary>Size</summary>
+      <div class="size-options" id="size-options"></div>
+    </details>
+
+    <details class="filter-group" open>
+      <summary>Dress Style</summary>
+      <div class="filter-options" id="style-options"></div>
+    </details>
+  </aside>
+
+  <!-- ===================== PRODUCT LIST ===================== -->
+  <main>
+    <div class="shop-main-head">
+      <div>
+        <h1>All Products</h1>
+        <span class="count" id="result-count"></span>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button class="mobile-filter-toggle" id="mobile-filter-btn">Filters ⚙</button>
+        <select class="sort-select" id="sort-select">
+          <option value="featured">Sort by: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Highest Rated</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="active-filters" id="active-filters"></div>
+
+    <div class="product-grid shop-grid" id="shop-grid"></div>
+
+    <div class="pagination" id="pagination"></div>
+  </main>
+</div>
+
+<div class="newsletter">
+  <h3>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h3>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email address" required>
+    <button type="submit">Subscribe to Newsletter</button>
+  </form>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">SHOP.CO</a>
+        <p>We have clothes that suit your style and which you're proud to wear. From women to men.</p>
+        <div class="footer-socials">
+          <a href="#">𝕏</a><a href="#">f</a><a href="#">ig</a><a href="#">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li>About</li><li>Features</li><li>Works</li><li>Career</li></ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul><li>Customer Support</li><li>Delivery Details</li><li>Terms &amp; Conditions</li><li>Privacy Policy</li></ul>
+      </div>
+      <div>
+        <h4>FAQ</h4>
+        <ul><li>Account</li><li>Manage Deliveries</li><li>Orders</li><li>Payments</li></ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul><li>Free eBooks</li><li>Development Tutorial</li><li>How to - Blog</li><li>Youtube Playlist</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Shop.co © 2026, All Rights Reserved</span>
+      <span>VISA · Mastercard · PayPal · Apple Pay</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>

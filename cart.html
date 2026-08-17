@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — SHOP.CO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<div class="announcement">
+  Sign up and get 20% off your first order. <strong>Sign Up Now</strong>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">SHOP.CO</a>
+    <nav class="main-nav">
+      <a href="shop.html">Shop ▾</a>
+      <a href="shop.html">On Sale</a>
+      <a href="shop.html">New Arrivals</a>
+      <a href="shop.html">Brands</a>
+    </nav>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" placeholder="Search for products...">
+    </div>
+    <div class="header-icons">
+      <a class="icon-btn" href="cart.html" title="Cart">
+        🛒<span class="cart-count">0</span>
+      </a>
+      <a class="icon-btn" href="#" title="Account">👤</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="index.html">Home</a> / <strong>Cart</strong></p>
+</div>
+
+<main class="container cart-main">
+  <h1>YOUR CART</h1>
+  <div class="cart-layout">
+    <section id="cart-items" class="cart-list" aria-label="Cart items"></section>
+
+    <aside class="summary-card">
+      <h2>Order Summary</h2>
+      <div class="summary-line"><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+      <div class="summary-line"><span>Discount (-20%)</span><strong class="discount" id="discount">-$0</strong></div>
+      <div class="summary-line"><span>Delivery Fee</span><strong id="delivery-fee">$15</strong></div>
+      <div class="summary-total"><span>Total</span><strong id="cart-total">$0</strong></div>
+      <form class="promo-form" id="promo-form">
+        <label><span>🎟️</span><input type="text" placeholder="Add promo code"></label>
+        <button type="submit">Apply</button>
+      </form>
+      <button class="checkout-button" id="checkout-btn">Go to Checkout →</button>
+    </aside>
+  </div>
+</main>
+
+<div class="newsletter">
+  <h3>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h3>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email address" required>
+    <button type="submit">Subscribe to Newsletter</button>
+  </form>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">SHOP.CO</a>
+        <p>We have clothes that suit your style and which you're proud to wear. From women to men.</p>
+        <div class="footer-socials">
+          <a href="#">𝕏</a><a href="#">f</a><a href="#">ig</a><a href="#">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li>About</li><li>Features</li><li>Works</li><li>Career</li></ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul><li>Customer Support</li><li>Delivery Details</li><li>Terms &amp; Conditions</li><li>Privacy Policy</li></ul>
+      </div>
+      <div>
+        <h4>FAQ</h4>
+        <ul><li>Account</li><li>Manage Deliveries</li><li>Orders</li><li>Payments</li></ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul><li>Free eBooks</li><li>Development Tutorial</li><li>How to - Blog</li><li>Youtube Playlist</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Shop.co © 2026, All Rights Reserved</span>
+      <span>VISA · Mastercard · PayPal · Apple Pay</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="cart.js"></script>
+</body>
+</html>
